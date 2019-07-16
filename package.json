@@ -1,19 +1,19 @@
 {
-  "name": "@vaadin-component-factory/vcf-element",
+  "name": "@vaadin-component-factory/vcf-pwa-install-button",
   "version": "0.1.0",
-  "description": "Vaadin Component Factory Element",
-  "main": "theme/lumo/vcf-element.js",
+  "description": "Vaadin Component Factory pwa-install-button",
+  "main": "theme/lumo/vcf-pwa-install-button.js",
   "author": "Vaadin Ltd",
   "license": "https://raw.githubusercontent.com/vaadin/vaadin-incubator-element/master/LICENSE",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vaadin-component-factory/vcf-element.git"
+    "url": "git+https://github.com/vaadin-component-factory/vcf-pwa-install-button.git"
   },
   "keywords": [
     "Vaadin",
     "vaadin-incubator-element",
     "vaadin-component-factory",
-    "vcf-element",
+    "vcf-pwa-install-button",
     "web-components",
     "web-component",
     "polymer"
@@ -58,9 +58,9 @@
     "wct-mocha": "^1.0.0"
   },
   "bugs": {
-    "url": "https://github.com/vaadin-component-factory/vcf-element/issues"
+    "url": "https://github.com/vaadin-component-factory/vcf-pwa-install-button/issues"
   },
-  "homepage": "https://github.com/vaadin-component-factory/vcf-element#readme",
+  "homepage": "https://github.com/vaadin-component-factory/vcf-pwa-install-button#readme",
   "directories": {
     "test": "test"
   }

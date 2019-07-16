@@ -1,6 +1,6 @@
 const theme = document.createElement('dom-module');
-theme.id = 'vcf-element-lumo';
-theme.setAttribute('theme-for', 'vcf-element');
+theme.id = 'vcf-pwa-install-button-lumo';
+theme.setAttribute('theme-for', 'vcf-pwa-install-button');
 theme.innerHTML = `
     <template>
       <style>
