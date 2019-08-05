@@ -3,7 +3,7 @@ import '@polymer/iron-iconset-svg/iron-iconset-svg.js';
 import { html } from '@polymer/polymer/lib/utils/html-tag.js';
 
 const template = html`
-  <iron-iconset-svg name="taskmob" size="24">
+  <iron-iconset-svg name="vcf" size="24">
     <svg>
       <defs>
         <g id="download">

@@ -16,7 +16,7 @@ class VcfPwaInstallButton extends ElementMixin(ThemableMixin(PolymerElement)) {
         }
       </style>
       <vaadin-button theme="small" on-click="showInstallDialog" id="install-button">
-        <iron-icon icon="taskmob:download" slot="prefix"></iron-icon>
+        <iron-icon icon="vcf:download" slot="prefix"></iron-icon>
         <slot></slot>
       </vaadin-button>
     `;
@@ -27,7 +27,7 @@ class VcfPwaInstallButton extends ElementMixin(ThemableMixin(PolymerElement)) {
   }
 
   static get version() {
-    return '0.1.0';
+    return '0.1.1';
   }
 
   static get properties() {
