@@ -4,7 +4,7 @@ import { ElementMixin } from '@vaadin/vaadin-element-mixin';
 import '@vaadin/vaadin-button';
 import '@polymer/iron-icon';
 
-import { hasPwaInstallPrompt, openPwaInstallPrompt } from './pwa-install-prompt';
+import { hasPwaInstallPrompt, openPwaInstallPrompt } from '@vaadin-component-factory/vcf-pwa-install-helpers';
 import './icons';
 
 class VcfPwaInstallButton extends ElementMixin(ThemableMixin(PolymerElement)) {
@@ -27,7 +27,7 @@ class VcfPwaInstallButton extends ElementMixin(ThemableMixin(PolymerElement)) {
   }
 
   static get version() {
-    return '0.1.2';
+    return '0.1.3';
   }
 
   static get properties() {
