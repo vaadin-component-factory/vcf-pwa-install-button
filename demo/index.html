@@ -19,6 +19,20 @@
       <demo-snippet>
         <template>
           <vcf-pwa-install-button>Install App</vcf-pwa-install-button>
+          <script>
+            window.addEventListener('WebComponentsReady', () => {
+              const pwaButton = document.querySelector('vcf-pwa-install-button');
+              /*
+               * The component fires 3 custom events:
+               *  - vcf-pwa-install-triggered: when the user click the button
+               *  - vcf-pwa-install-successful: when the user installs the app
+               *  - vcf-pwa-install-cancelled: when the user cancels the installation of the app
+               */
+              pwaButton.addEventListener('vcf-pwa-install-triggered', () => {
+                console.log('Triggered');
+              });
+            });
+          </script>
         </template>
       </demo-snippet>
     </div>

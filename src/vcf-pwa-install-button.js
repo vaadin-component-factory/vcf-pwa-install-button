@@ -4,17 +4,18 @@ import { ElementMixin } from '@vaadin/vaadin-element-mixin';
 import '@vaadin/vaadin-button';
 import '@polymer/iron-icon';
 
-import { hasPwaInstallPrompt, openPwaInstallPrompt } from '@vaadin-component-factory/vcf-pwa-install-helpers';
+import { openPwaInstallPrompt } from '@vaadin-component-factory/vcf-pwa-install-helpers';
 import './icons';
 
+/*
+ * The component fires 3 custom events:
+ *  - vcf-pwa-install-triggered: when the user click the button
+ *  - vcf-pwa-install-successful: when the user installs the app
+ *  - vcf-pwa-install-cancelled: when the user cancels the installation of the app
+ */
 class VcfPwaInstallButton extends ElementMixin(ThemableMixin(PolymerElement)) {
   static get template() {
     return html`
-      <style>
-        :host(:not(.install-button-visible)) {
-          justify-content: space-between;
-        }
-      </style>
       <vaadin-button theme="small" on-click="showInstallDialog" id="install-button">
         <iron-icon icon="vcf:download" slot="prefix"></iron-icon>
         <slot></slot>
@@ -27,54 +28,21 @@ class VcfPwaInstallButton extends ElementMixin(ThemableMixin(PolymerElement)) {
   }
 
   static get version() {
-    return '0.1.3';
-  }
-
-  static get properties() {
-    return {};
-  }
-
-  constructor() {
-    super();
-    this._beforeInstallPromptListener = () => {
-      if (!window.matchMedia('(display-mode: standalone)').matches) {
-        this.classList.add('install-button-visible');
-      }
-    };
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
-    window.addEventListener('beforeinstallprompt', this._beforeInstallPromptListener);
-    if (hasPwaInstallPrompt()) {
-      this.classList.add('install-button-visible');
-    }
-  }
-
-  disconnectedCallback() {
-    window.removeEventListener('beforeinstallprompt', this._beforeInstallPromptListener);
-    super.disconnectedCallback();
+    return '0.2.0';
   }
 
   showInstallDialog() {
-    // Track the event
-    if (window.ga) {
-      window.ga('send', 'event', 'PWA', 'install triggered', 'attribution-component');
-    }
+    this.dispatchEvent(new CustomEvent('vcf-pwa-install-triggered', { bubbles: true, composed: true }));
 
     // Show the prompt
     openPwaInstallPrompt().then(choiceResult => {
       if (choiceResult.outcome === 'accepted') {
-        if (window.ga) {
-          window.ga('send', 'event', 'PWA', 'install successful', 'attribution-component');
-        }
+        this.dispatchEvent(new CustomEvent('vcf-pwa-install-successful', { bubbles: true, composed: true }));
 
         localStorage.setItem('vcf-installed-pwa', 'true');
         this.classList.remove('install-button-visible');
       } else {
-        if (window.ga) {
-          window.ga('send', 'event', 'PWA', 'install cancelled', 'attribution-component');
-        }
+        this.dispatchEvent(new CustomEvent('vcf-pwa-install-cancelled', { bubbles: true, composed: true }));
       }
     });
   }
