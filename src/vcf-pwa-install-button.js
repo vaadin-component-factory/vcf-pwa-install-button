@@ -28,7 +28,7 @@ class VcfPwaInstallButton extends ElementMixin(ThemableMixin(PolymerElement)) {
   }
 
   static get version() {
-    return '0.2.0';
+    return '0.2.1';
   }
 
   showInstallDialog() {

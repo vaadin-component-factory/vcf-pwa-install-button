@@ -8,11 +8,25 @@ Install `vcf-pwa-install-button`:
 npm i @vaadin-component-factory/vcf-pwa-install-button --save
 ```
 
+## Usage
+
 Once installed, import it in your application:
 
 ```js
 import '@vaadin-component-factory/vcf-pwa-install-button/vcf-pwa-install-button.js';
 ```
+
+And use it:
+
+```html
+<vcf-pwa-install-button>Button caption</vcf-pwa-install-button>
+```
+
+### Events
+The component fires 3 custom events:
+ - `vcf-pwa-install-triggered`: when the user click the button.
+ - `vcf-pwa-install-successful`: when the user installs the app.
+ - `vcf-pwa-install-cancelled`: when the user cancels the installation of the app.
 
 ## Running demo
 
