@@ -1,6 +1,6 @@
 {
   "name": "@vaadin-component-factory/vcf-pwa-install-button",
-  "version": "0.2.2",
+  "version": "0.2.4",
   "description": "Vaadin Component Factory pwa-install-button",
   "main": "theme/lumo/vcf-pwa-install-button.js",
   "author": "Vaadin Ltd",
