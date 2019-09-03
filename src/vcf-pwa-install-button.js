@@ -27,10 +27,6 @@ class VcfPwaInstallButton extends ElementMixin(ThemableMixin(PolymerElement)) {
     return 'vcf-pwa-install-button';
   }
 
-  static get version() {
-    return '0.2.3';
-  }
-
   showInstallDialog() {
     this.dispatchEvent(new CustomEvent('vcf-pwa-install-triggered', { bubbles: true, composed: true }));
 
