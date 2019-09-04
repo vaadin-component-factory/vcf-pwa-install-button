@@ -17,7 +17,7 @@ npm i @vaadin-component-factory/vcf-pwa-install-button --save
 Once installed, import it in your application:
 
 ```js
-import '@vaadin-component-factory/vcf-pwa-install-button/vcf-pwa-install-button.js';
+import '@vaadin-component-factory/vcf-pwa-install-button';
 ```
 
 And use it:
