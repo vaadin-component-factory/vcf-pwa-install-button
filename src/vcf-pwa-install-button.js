@@ -1,6 +1,7 @@
 import { html, PolymerElement } from '@polymer/polymer/polymer-element';
 import { ThemableMixin } from '@vaadin/vaadin-themable-mixin';
 import { ElementMixin } from '@vaadin/vaadin-element-mixin';
+import '@vaadin/vaadin-license-checker/vaadin-license-checker';
 import '@vaadin/vaadin-button';
 import '@polymer/iron-icon';
 
@@ -27,6 +28,19 @@ class VcfPwaInstallButton extends ElementMixin(ThemableMixin(PolymerElement)) {
     return 'vcf-pwa-install-button';
   }
 
+  /**
+   * @protected
+   */
+  static _finalizeClass() {
+    super._finalizeClass();
+
+    const devModeCallback = window.Vaadin.developmentModeCallback;
+    const licenseChecker = devModeCallback && devModeCallback['vaadin-license-checker'];
+    if (typeof licenseChecker === 'function') {
+      licenseChecker(ConfirmDialogElement);
+    }
+  }
+
   showInstallDialog() {
     this.dispatchEvent(new CustomEvent('vcf-pwa-install-triggered', { bubbles: true, composed: true }));
 
@@ -50,7 +64,3 @@ customElements.define(VcfPwaInstallButton.is, VcfPwaInstallButton);
  * @namespace Vaadin
  */
 window.Vaadin.VcfPwaInstallButton = VcfPwaInstallButton;
-
-if (window.Vaadin.runIfDevelopmentMode) {
-  window.Vaadin.runIfDevelopmentMode('vaadin-license-checker', VcfPwaInstallButton);
-}
