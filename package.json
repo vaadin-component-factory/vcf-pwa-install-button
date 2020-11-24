@@ -1,6 +1,6 @@
 {
   "name": "@vaadin-component-factory/vcf-pwa-install-button",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Vaadin Component Factory pwa-install-button",
   "main": "theme/lumo/vcf-pwa-install-button.js",
   "author": "Vaadin Ltd",
@@ -44,7 +44,6 @@
     "@vaadin-component-factory/vcf-pwa-install-helpers": "^1.0.0",
     "@vaadin/vaadin-button": "2.2.0",
     "@vaadin/vaadin-element-mixin": "^2.1.3",
-    "@vaadin/vaadin-license-checker": "^2.1.2",
     "@vaadin/vaadin-lumo-styles": "^1.5.0",
     "@vaadin/vaadin-themable-mixin": "^1.4.4"
   },
